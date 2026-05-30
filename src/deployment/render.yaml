@@ -1,0 +1,6 @@
+services:
+  - type: web
+    name: funnel-analysis-system
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: streamlit run streamlit_app/app.py

@@ -1,0 +1,76 @@
+/* -------------------------------- */
+/* GLOBAL STYLES */
+/* -------------------------------- */
+
+body {
+    background-color: #f5f7fa;
+    font-family: Arial, sans-serif;
+}
+
+/* -------------------------------- */
+/* MAIN TITLE */
+/* -------------------------------- */
+
+h1 {
+    color: #1f77b4;
+    font-weight: bold;
+}
+
+/* -------------------------------- */
+/* KPI CARDS */
+/* -------------------------------- */
+
+[data-testid="metric-container"] {
+    background-color: white;
+    border: 1px solid #e6e6e6;
+    padding: 15px;
+    border-radius: 12px;
+    box-shadow: 2px 2px 10px rgba(0,0,0,0.05);
+}
+
+/* -------------------------------- */
+/* SIDEBAR */
+/* -------------------------------- */
+
+section[data-testid="stSidebar"] {
+    background-color: #ffffff;
+    border-right: 1px solid #e6e6e6;
+}
+
+/* -------------------------------- */
+/* BUTTONS */
+/* -------------------------------- */
+
+.stButton > button {
+    background-color: #1f77b4;
+    color: white;
+    border-radius: 8px;
+    border: none;
+    padding: 10px 18px;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.stButton > button:hover {
+    background-color: #155a8a;
+    color: white;
+}
+
+/* -------------------------------- */
+/* DATAFRAME */
+/* -------------------------------- */
+
+[data-testid="stDataFrame"] {
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+/* -------------------------------- */
+/* CHARTS */
+/* -------------------------------- */
+
+.js-plotly-plot {
+    border-radius: 12px;
+    background-color: white;
+    padding: 10px;
+}
