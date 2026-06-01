@@ -11,15 +11,9 @@ https://customer-retention-intelligence-platform-so9jqrreovwkbhehg65lo.streamlit
 ---
 ## Live Dashboard Demo
 
-The demo below showcases:
+Watch the complete dashboard walkthrough:
 
-- KPI Monitoring
-- Customer Segmentation
-- Churn Analysis
-- Retention Analytics
-- Cohort Analysis
-- Executive Insights
-![Streamlit Demo](assets/demo video.mp4)
+[▶️ View Demo Video](assets/demo_video.mp4)
 
 ---
 ## Overview
