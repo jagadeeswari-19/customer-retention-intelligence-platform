@@ -6,7 +6,7 @@ import os
 # -----------------------------------------
 
 st.set_page_config(
-    page_title="Funnel Analysis System",
+    page_title="Customer Retention Intelligence Platform",
     layout="wide"
 )
 
@@ -34,7 +34,7 @@ load_css()
 # HOME PAGE
 # -----------------------------------------
 
-st.title("📊 Funnel Analysis System")
+st.title("📊 Customer Retention Intelligence Platform")
 
 st.markdown("""
 ## Features
