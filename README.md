@@ -77,7 +77,15 @@ The primary objectives were:
 | Loyal Customers | 2,303 |
 
 ---
+## Project Results
 
+- Total Customers: 7,032
+- Retention Rate: 73.42%
+- Churn Rate: 26.58%
+- Revenue Analysed: ₹16.06M
+- High Value Customers: 1,135
+
+---
 # Business Impact
 
 The platform enabled the business to:
