@@ -9,374 +9,454 @@
 https://funnel-analysis-system-cyycuwn5ez8f8py2krfkyh.streamlit.app/
 
 ---
+# Customer Retention Intelligence Platform
 
-# 1. Project Overview
+## Overview
 
-The **Funnel Analysis System** is an end-to-end Business Intelligence and Customer Analytics platform designed to analyze customer behavior, churn patterns, revenue trends, retention metrics, and customer segmentation.
+Customer Retention Intelligence Platform is an end-to-end analytics solution designed to help businesses identify churn risks, improve customer retention, analyze revenue performance, and support strategic decision-making through Business Intelligence dashboards and predictive analytics.
 
-This project combines:
+The platform combines:
 
-* Data Engineering
-* SQL Analytics
-* Machine Learning
-* Power BI Dashboards
-* Streamlit Web Application
-* ETL Pipelines
-* Customer Churn Prediction
+- SQL Analytics
+- Python Data Processing
+- Machine Learning
+- Power BI Dashboards
+- Customer Segmentation
+- Cohort Analysis
+- Retention Analytics
+- Executive Reporting
 
-The system helps businesses monitor KPIs, identify churn risks, improve retention strategies, and make data-driven decisions.
-
----
-
-# 2. Business Problem
-
-Customer churn is one of the major challenges faced by subscription-based businesses and telecom industries.
-
-Businesses often struggle to:
-
-* Identify customers likely to churn
-* Understand customer retention behavior
-* Analyze revenue contribution
-* Track funnel conversion performance
-* Detect high-value customers
-* Improve customer lifetime value
-
-Without proper analytics, businesses lose revenue and customer loyalty.
-
-This project solves these challenges using advanced analytics and interactive dashboards.
+The system transforms raw customer data into actionable business insights that can reduce churn, improve retention, and maximize customer lifetime value.
 
 ---
 
-# 3. Objectives
+# Business Problem
 
-The main objectives of this project are:
+A telecom company with 7,032 customers was experiencing significant customer churn, resulting in revenue loss and reduced customer lifetime value.
 
-* Build a complete customer analytics platform
-* Analyze customer funnel and retention behavior
-* Predict customer churn using Machine Learning
-* Create interactive dashboards using Streamlit and Power BI
-* Perform SQL-based business analytics
-* Generate executive business reports
-* Improve decision-making using insights
+Business stakeholders needed to:
 
----
+- Identify major churn drivers
+- Understand retention behavior
+- Monitor customer revenue contribution
+- Segment high-value customers
+- Analyze contract performance
+- Improve customer engagement
+- Build proactive retention strategies
 
-# 4. Dataset Description
-
-The dataset contains customer subscription and telecom-related information.
-
-## Dataset Features
-
-| Feature         | Description                     |
-| --------------- | ------------------------------- |
-| customerID      | Unique customer identifier      |
-| gender          | Male/Female                     |
-| SeniorCitizen   | Senior citizen status           |
-| Partner         | Whether customer has a partner  |
-| Dependents      | Whether customer has dependents |
-| tenure          | Customer subscription duration  |
-| PhoneService    | Phone service availability      |
-| InternetService | Internet service type           |
-| Contract        | Contract type                   |
-| PaymentMethod   | Customer payment method         |
-| MonthlyCharges  | Monthly subscription charges    |
-| TotalCharges    | Total customer charges          |
-| Churn           | Customer churn status           |
+Without a centralized analytics platform, decision-making was reactive rather than data-driven.
 
 ---
 
-# 5. Architecture
+# Business Objectives
+
+The primary objectives were:
+
+- Analyze customer churn patterns
+- Monitor retention and loyalty metrics
+- Identify high-risk customer segments
+- Quantify revenue contribution
+- Build churn prediction capabilities
+- Develop executive dashboards
+- Generate actionable business recommendations
+
+---
+
+# Key Business Results
+
+| Metric | Value |
+|----------|----------|
+| Total Customers | 7,032 |
+| Active Customers | 5,163 |
+| Churned Customers | 1,869 |
+| Retention Rate | 73.42% |
+| Churn Rate | 26.58% |
+| Total Revenue | ₹16.06M |
+| Average Monthly Revenue | ₹64.80 |
+| High Value Customers | 1,135 |
+| Loyal Customers | 2,303 |
+
+---
+
+# Business Impact
+
+The platform enabled the business to:
+
+- Detect customer churn risks earlier
+- Identify contract types with highest churn
+- Understand revenue contribution by customer segment
+- Track retention performance across tenure groups
+- Prioritize customer retention campaigns
+- Improve strategic decision-making through executive dashboards
+
+---
+
+# Dataset Overview
+
+The dataset contains telecom customer subscription information.
+
+### Features
+
+| Feature | Description |
+|----------|-------------|
+| customerID | Unique customer identifier |
+| gender | Customer gender |
+| SeniorCitizen | Senior citizen flag |
+| Partner | Customer partner status |
+| Dependents | Customer dependents |
+| tenure | Subscription duration |
+| PhoneService | Phone service availability |
+| InternetService | Internet service type |
+| Contract | Contract category |
+| PaymentMethod | Payment method |
+| MonthlyCharges | Monthly subscription fee |
+| TotalCharges | Lifetime customer charges |
+| Churn | Customer churn status |
+
+---
+
+# Project Architecture
 
 ```text
-                ┌──────────────────┐
-                │ Raw CSV Dataset  │
-                └────────┬─────────┘
-                         │
-                         ▼
-               ┌───────────────────┐
-               │ Data Preprocessing│
-               └────────┬──────────┘
-                        │
-        ┌───────────────┼────────────────┐
-        ▼               ▼                ▼
-┌────────────┐ ┌──────────────┐ ┌────────────────┐
-│ SQL Engine │ │ ML Pipeline  │ │ ETL Pipeline   │
-└─────┬──────┘ └──────┬───────┘ └────────┬───────┘
-      ▼                ▼                  ▼
-┌────────────┐ ┌──────────────┐ ┌────────────────┐
-│ Analytics  │ │ Churn Model  │ │ Processed Data │
-└─────┬──────┘ └──────┬───────┘ └────────┬───────┘
-      ▼                ▼                  ▼
- ┌──────────────────────────────────────────────┐
- │ Power BI Dashboard + Streamlit Dashboard     │
- └──────────────────────────────────────────────┘
+Raw Dataset
+    │
+    ▼
+ETL Pipeline
+    │
+    ▼
+Data Cleaning & Validation
+    │
+    ▼
+Analytics Engine
+    ├── KPI Monitoring
+    ├── Customer Segmentation
+    ├── Retention Analysis
+    ├── Cohort Analysis
+    ├── Churn Prediction
+    └── Executive Reporting
+            │
+            ▼
+Power BI Dashboard
+Streamlit Dashboard
 ```
 
 ---
 
-# 6. Features
+# Analytics Modules
 
-## ✅ Data Processing
+## KPI Monitoring
 
-* Data Cleaning
-* Missing Value Handling
-* Feature Engineering
-* Data Validation
+Tracks:
 
-## ✅ SQL Analytics
-
-* Funnel Analysis
-* Retention Analysis
-* Cohort Analysis
-* KPI Monitoring
-* Advanced Joins
-
-## ✅ Machine Learning
-
-* Customer Churn Prediction
-* Customer Segmentation
-* Retention Modeling
-
-## ✅ Dashboards
-
-* Interactive Streamlit Dashboard
-* Power BI Dashboard
-* KPI Cards
-* Cohort Heatmaps
-
-## ✅ Reporting
-
-* Executive Summary Generation
-* Business Recommendations
-* KPI Reporting
+- Total Customers
+- Active Customers
+- Churned Customers
+- Revenue
+- Retention Rate
+- Churn Rate
 
 ---
 
-# 7. SQL Analytics
+## Customer Segmentation
 
-## SQL Modules
+Segments customers based on:
 
-| File                  | Purpose                         |
-| --------------------- | ------------------------------- |
-| funnel_queries.sql    | Funnel Conversion Analysis      |
-| retention_queries.sql | Customer Retention Analysis     |
-| cohort_analysis.sql   | Cohort Behavior Analysis        |
-| traffic_analysis.sql  | Traffic and Engagement Analysis |
-| kpi_monitoring.sql    | KPI Calculations                |
-| advanced_joins.sql    | Advanced Business Joins         |
+- Revenue contribution
+- Contract type
+- Monthly charges
+- Customer lifetime value
 
-### SQL Operations Performed
+Key Outcome:
 
-* GROUP BY
-* CASE WHEN
-* Window Functions
-* Common Table Expressions (CTEs)
-* Aggregate Functions
-* JOIN Operations
-* Ranking Functions
+- Identified 1,135 high-value customers
 
 ---
 
-# 8. Dashboard Screenshots
+## Churn Analysis
 
-## 📌 Power BI Dashboard
+Analyzes:
 
-### Page 1 — Executive KPI Dashboard
+- Contract-based churn
+- Payment method impact
+- Internet service impact
+- Tenure influence
+- Monthly charge behavior
+
+Key Finding:
+
+Month-to-month customers exhibit significantly higher churn risk.
+
+---
+
+## Retention Analysis
+
+Measures:
+
+- Retention rate
+- Customer loyalty
+- Long-term engagement
+
+Results:
+
+- Retention Rate: 73.42%
+- Loyal Customers: 2,303
+
+---
+
+## Cohort Analysis
+
+Evaluates customer behavior across tenure groups to understand long-term retention patterns.
+
+Business Benefits:
+
+- Understand customer lifecycle
+- Measure cohort performance
+- Identify retention opportunities
+
+---
+
+## Customer Lifetime Value Analysis
+
+Analyzes:
+
+- Revenue contribution
+- Contract profitability
+- Customer value distribution
+
+Key Finding:
+
+Long-term contract customers generate higher lifetime value.
+
+---
+
+## Executive Summary Reporting
+
+Automatically generates:
+
+- KPI summaries
+- Revenue insights
+- Retention insights
+- Churn insights
+- Strategic recommendations
+
+---
+
+# Machine Learning
+
+## Churn Prediction
+
+Built a predictive analytics model to identify customers likely to churn.
+
+Business Value:
+
+- Early intervention
+- Targeted retention campaigns
+- Reduced customer attrition
+
+---
+
+# SQL Analytics
+
+Implemented advanced SQL analytics using:
+
+- GROUP BY
+- CASE WHEN
+- Aggregate Functions
+- Window Functions
+- Common Table Expressions (CTEs)
+- Ranking Functions
+- Joins
+
+### SQL Modules
+
+- churn_analysis.sql
+- retention_analysis.sql
+- cohort_analysis.sql
+- revenue_analysis.sql
+- kpi_monitoring.sql
+
+---
+
+# Power BI Dashboards
+
+## Dashboard 1 – Executive KPI Dashboard
+
+Tracks:
+
+- Total Customers
+- Active Customers
+- Churned Customers
+- Revenue
+- Retention Rate
+- Churn Rate
 
 ![Executive KPI Dashboard](assets/screenshots/powerbi_page1.png)
 
 ---
 
-### Page 2 — Customer Churn Analysis
+## Dashboard 2 – Customer Churn Analysis
+
+Analyzes:
+
+- Churn by Contract Type
+- Payment Method Impact
+- Internet Service Impact
+- Revenue Loss
+- Tenure vs Churn
 
 ![Customer Churn Analysis](assets/screenshots/powerbi_page2.png)
 
 ---
 
-### Page 3 — Customer Segmentation & Revenue Analysis
+## Dashboard 3 – Customer Segmentation & Revenue Analysis
 
-![Customer Segmentation & Revenue Analysis](assets/screenshots/powerbi_page3.png)
+Analyzes:
+
+- Revenue Contribution
+- High Value Customers
+- Customer Lifetime Value
+- Revenue by Contract
+- Revenue by Service Type
+
+![Customer Segmentation](assets/screenshots/powerbi_page3.png)
 
 ---
 
-### Page 4 — Retention & Cohort Analysis
+## Dashboard 4 – Retention & Cohort Analysis
+
+Tracks:
+
+- Retention Rate
+- Loyal Customers
+- Cohort Behavior
+- Tenure Analysis
+- Retention Trends
 
 ![Retention & Cohort Analysis](assets/screenshots/powerbi_page4.png)
 
 ---
 
-### Page 5 — Executive Summary Dashboard
+## Dashboard 5 – Executive Business Insights
 
-![Executive Summary Dashboard](assets/screenshots/powerbi_page5.png)
+Provides:
 
----
+- Business Findings
+- Strategic Recommendations
+- Revenue Trends
+- Churn Drivers
 
-# 9. Streamlit App
-
-The project includes an interactive Streamlit dashboard.
-
-### Features
-
-* KPI Monitoring
-* Churn Prediction
-* Revenue Analysis
-* Customer Segmentation
-* Interactive Charts
-* Heatmaps
-* Executive Reporting
-
-### Run Streamlit App
-
-```bash
-streamlit run streamlit_app/app.py
-```
+![Executive Business Insights](assets/screenshots/powerbi_page5.png)
 
 ---
 
-# 10. Key Insights
+# Key Business Insights
 
-## 📈 Business Insights
+### Churn Insights
 
-* Month-to-month contract customers show the highest churn.
-* Customers with short tenure are more likely to churn.
-* Fiber optic customers contribute higher revenue.
-* Long-term contracts improve customer retention.
-* Higher monthly charges increase churn probability.
-* Electronic check users show higher churn risk.
-* Loyal customers generate higher lifetime value.
+- Month-to-month contract customers show the highest churn.
+- Customers with shorter tenure are more likely to churn.
+- Electronic check users demonstrate higher churn risk.
+- Higher monthly charges increase churn probability.
 
----
+### Revenue Insights
 
-# 11. Business Recommendations
+- Fiber optic customers contribute the highest revenue.
+- Long-term contracts generate higher customer lifetime value.
+- High-value customers contribute a significant portion of revenue.
 
-## ✅ Recommendations
+### Retention Insights
 
-* Introduce loyalty programs for long-term customers.
-* Improve onboarding experience for new users.
-* Provide discounts for high-risk customers.
-* Enhance customer support quality.
-* Promote yearly and long-term contracts.
-* Build personalized retention campaigns.
-* Improve customer engagement strategies.
+- Long-term contract customers show stronger retention.
+- Loyal customers generate greater lifetime value.
+- Early-stage customers require improved onboarding support.
 
 ---
 
-# 12. Tech Stack
+# Strategic Recommendations
 
-## Programming Languages
-
-* Python
-* SQL
-
-## Libraries
-
-* Pandas
-* NumPy
-* Scikit-learn
-* Matplotlib
-* Seaborn
-* Plotly
-* Streamlit
-
-## Database
-
-* MySQL
-
-## Visualization Tools
-
-* Power BI
-* Streamlit
-
-## Deployment
-
-* Streamlit Community Cloud
-* Docker
-* Render
-* Railway
-
-## Development Tools
-
-* VS Code
-* Jupyter Notebook
+1. Introduce loyalty rewards for long-term customers.
+2. Improve onboarding for new customers.
+3. Offer retention discounts to high-risk customers.
+4. Promote annual and long-term contracts.
+5. Build personalized customer engagement campaigns.
+6. Improve customer support experiences.
+7. Develop proactive churn prevention strategies.
 
 ---
 
-# 13. Future Improvements
+# Technology Stack
 
-## 🚀 Future Enhancements
+### Programming
 
-* Real-Time Analytics Dashboard
-* Cloud Deployment using AWS/GCP
-* Advanced ML Models
-* Recommendation System
-* Automated Report Generation
-* API Integration
-* Real-Time Churn Monitoring
-* Customer Sentiment Analysis
-* Predictive Revenue Forecasting
+- Python
+- SQL
+
+### Python Libraries
+
+- Pandas
+- NumPy
+- Scikit-Learn
+- Matplotlib
+- Seaborn
+- Plotly
+- Streamlit
+
+### Database
+
+- MySQL
+
+### Visualization
+
+- Power BI
+- Streamlit
+
+### Development Tools
+
+- GitHub
+- Jupyter Notebook
+- VS Code
 
 ---
 
-# 📂 Project Structure
+# Project Structure
 
 ```text
-funnel-analysis-system/
-│
+customer-retention-intelligence-platform/
+
 ├── data/
-├── notebooks/
 ├── sql/
 ├── src/
-├── dashboard/
 ├── reports/
 ├── models/
 ├── streamlit_app/
-├── tests/
+├── assets/
+│   └── screenshots/
 ├── main.py
+├── generate_report.py
 ├── requirements.txt
-├── README.md
-└── docker-compose.yml
+└── README.md
 ```
 
 ---
 
-# 🚀 Run the Project
+# Future Enhancements
 
-## 1. Install Dependencies
-
-```bash
-pip install -r requirements.txt
-```
-
-## 2. Run ETL Pipeline
-
-```bash
-python main.py
-```
-
-## 3. Run Streamlit Dashboard
-
-```bash
-streamlit run streamlit_app/app.py
-```
+- Real-time analytics pipeline
+- AWS deployment
+- Predictive revenue forecasting
+- Customer recommendation engine
+- Automated retention campaign generation
+- API integrations
+- Real-time churn monitoring
 
 ---
 
-# 📊 Final Deliverables
+# Author
 
-✅ ETL Pipeline
+Jagadeeswari S
 
-✅ SQL Analytics
+Data Analyst | SQL | Python | Power BI | Customer Analytics | Business Intelligence
 
-✅ Churn Prediction Model
+LinkedIn: [Add Link]
 
-✅ Power BI Dashboard
-
-✅ Streamlit Dashboard
-
-✅ Executive Summary Reports
-
-✅ Customer Segmentation
-
-✅ Retention Analysis
-
-✅ Business Intelligence Platform
+GitHub: [Add Link]
