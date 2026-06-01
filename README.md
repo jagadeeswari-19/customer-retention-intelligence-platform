@@ -9,6 +9,19 @@
 https://customer-retention-intelligence-platform-so9jqrreovwkbhehg65lo.streamlit.app/
 
 ---
+## Live Dashboard Demo
+
+The demo below showcases:
+
+- KPI Monitoring
+- Customer Segmentation
+- Churn Analysis
+- Retention Analytics
+- Cohort Analysis
+- Executive Insights
+![Streamlit Demo](assets/demo video.mp4)
+
+---
 ## Overview
 
 Customer Retention Intelligence Platform is an end-to-end analytics solution designed to help businesses identify churn risks, improve customer retention, analyze revenue performance, and support strategic decision-making through Business Intelligence dashboards and predictive analytics.
