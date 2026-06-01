@@ -1,4 +1,4 @@
-# 📊 Funnel Analysis System
+# 📊  Customer Retention Intelligence Platform
 
 ## 🚀 Live Demo
 
@@ -6,11 +6,9 @@
 
 🔗 Live App:
 
-https://funnel-analysis-system-cyycuwn5ez8f8py2krfkyh.streamlit.app/
+https://customer-retention-intelligence-platform-so9jqrreovwkbhehg65lo.streamlit.app/
 
 ---
-# Customer Retention Intelligence Platform
-
 ## Overview
 
 Customer Retention Intelligence Platform is an end-to-end analytics solution designed to help businesses identify churn risks, improve customer retention, analyze revenue performance, and support strategic decision-making through Business Intelligence dashboards and predictive analytics.
