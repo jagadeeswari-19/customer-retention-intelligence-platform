@@ -90,7 +90,13 @@ The platform enabled the business to:
 - Improve strategic decision-making through executive dashboards
 
 ---
+## Business Impact Report
 
+A detailed executive report summarizing business objectives, analytical findings, revenue insights, churn drivers, and strategic recommendations.
+
+📄 [View Business Impact Report](reports/Business_Impact_Report.pdf)
+
+---
 # Dataset Overview
 
 The dataset contains telecom customer subscription information.
