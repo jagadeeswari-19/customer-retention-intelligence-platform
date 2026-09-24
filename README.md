@@ -476,6 +476,6 @@ Jagadeeswari S
 
 Data Analyst | SQL | Python | Power BI | Customer Analytics | Business Intelligence
 
-LinkedIn: [Add Link]
+LinkedIn: https://www.linkedin.com/in/jagadeeswari-s-jagadeeswari/
 
-GitHub: [Add Link]
+GitHub: https://github.com/jagadeeswari-19/customer-retention-intelligence-platform
