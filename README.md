@@ -68,39 +68,51 @@ Retention & Revenue Analysis
 Power BI Dashboard
       ↓
 Interactive Streamlit Application
-🔑 Key Features
-1. Customer Churn Analysis
+```
+
+---
+
+## 🔑 Key Features
+
+### 1. Customer Churn Analysis
 
 The project analyzes customer-level information to identify patterns associated with churn.
 
 The analysis covers:
 
-Customer demographics
-Service usage
-Contract information
-Payment information
-Tenure
-Revenue-related metrics
-Churn behavior
-2. Churn Prediction
+- Customer demographics
+- Service usage
+- Contract information
+- Payment information
+- Tenure
+- Revenue-related metrics
+- Churn behavior
 
-A Random Forest classification model is used to predict whether a customer is likely to churn.
+---
+
+### 2. Churn Prediction
+
+A **Random Forest classification model** is used to predict whether a customer is likely to churn.
 
 The model generates:
 
-Churn predictions
-Churn probabilities
-Model performance metrics
-Customer-level prediction outputs
-3. Model Evaluation
+- Churn predictions
+- Churn probabilities
+- Model performance metrics
+- Customer-level prediction outputs
+
+---
+
+### 3. Model Evaluation
 
 The churn model is evaluated using:
 
-ROC-AUC
-Recall
-Precision
-Accuracy
-Why Recall Matters
+- ROC-AUC
+- Recall
+- Precision
+- Accuracy
+
+### Why Recall Matters
 
 For churn prediction, accuracy alone can be misleading because the dataset contains more non-churners than churners.
 
@@ -108,79 +120,98 @@ A model can achieve relatively high accuracy while still failing to identify a s
 
 Therefore, this project evaluates ROC-AUC, recall, precision, and accuracy together.
 
-🤖 Churn Model Evaluation
+---
+
+## 🤖 Churn Model Evaluation
 
 The model uses an 80/20 train-test split.
 
+```text
 Training Data → 80%
 Test Data     → 20%
+```
 
 The test set is used to evaluate model performance on unseen customer records.
 
 The model generates:
 
+```python
 y_pred = model.predict(X_test)
 
 y_prob = model.predict_proba(X_test)[:, 1]
+```
 
 These outputs are used to calculate the evaluation metrics.
 
-Evaluation Metrics
-ROC-AUC
+### Evaluation Metrics
+
+#### ROC-AUC
 
 ROC-AUC measures the model's ability to distinguish between churners and non-churners across different classification thresholds.
 
-Result: 0.813
+**Result: 0.813**
 
-Recall
+#### Recall
 
 Recall measures the proportion of actual churners successfully identified by the model.
 
+```text
 Recall =
 True Positives
 -------------------------
 True Positives + False Negatives
+```
 
-Result: 0.489
+**Result: 0.489**
 
-The current model identifies approximately 48.9% of the actual churners at the current classification threshold.
+The current model identifies approximately **48.9% of the actual churners** at the current classification threshold.
 
-Precision
+#### Precision
 
 Precision measures the proportion of customers predicted as churners who were actually churners.
 
+```text
 Precision =
 True Positives
 -------------------------
 True Positives + False Positives
+```
 
-Result: 0.644
+**Result: 0.644**
 
-Accuracy
+#### Accuracy
 
 Accuracy measures the overall proportion of correctly classified customers.
 
+```text
 Accuracy =
 Correct Predictions
 -------------------------
 Total Predictions
+```
 
-Result: 0.792
+**Result: 0.792**
 
 Accuracy is reported for completeness and is not treated as the only measure of model performance.
 
-📈 Model Performance
-Metric	Test Set Result
-ROC-AUC	0.813
-Recall	0.489
-Precision	0.644
-Accuracy	0.792
+---
+
+## 📈 Model Performance
+
+| Metric | Test Set Result |
+|---|---:|
+| ROC-AUC | **0.813** |
+| Recall | **0.489** |
+| Precision | **0.644** |
+| Accuracy | **0.792** |
 
 These results were generated from the current Random Forest model training run.
 
-Model performance depends on the dataset, feature preparation, train/test split, model configuration, and classification threshold.
+> Model performance depends on the dataset, feature preparation, train/test split, model configuration, and classification threshold.
 
-🎯 Classification Threshold
+---
+
+## 🎯 Classification Threshold
 
 The reported classification metrics are calculated using the model's current classification threshold.
 
@@ -188,9 +219,12 @@ For a customer retention use case, different thresholds can produce different pr
 
 A future improvement is to evaluate alternative thresholds based on the relative business cost of:
 
-Missing a customer who eventually churns
-Contacting a customer who would not have churned
-👥 Customer Retention Analysis
+- Missing a customer who eventually churns
+- Contacting a customer who would not have churned
+
+---
+
+## 👥 Customer Retention Analysis
 
 The project goes beyond simply predicting churn.
 
@@ -198,41 +232,47 @@ Churn predictions are combined with customer value and behavioral information to
 
 The analysis considers:
 
-Churn probability
-Customer value
-Revenue contribution
-Customer segments
-Service characteristics
-Contract characteristics
-Tenure
+- Churn probability
+- Customer value
+- Revenue contribution
+- Customer segments
+- Service characteristics
+- Contract characteristics
+- Tenure
 
 This allows customers to be analyzed across combinations such as:
 
-High-risk / Low-value customers
-High-risk / High-value customers
-Low-risk / High-value customers
-Low-risk / Low-value customers
+- High-risk / Low-value customers
+- High-risk / High-value customers
+- Low-risk / High-value customers
+- Low-risk / Low-value customers
 
 A key analytical focus is identifying customers who combine elevated churn risk with meaningful customer value.
 
-👥 Customer Segmentation
+---
+
+## 👥 Customer Segmentation
 
 Customer segmentation is used to group customers based on behavioral and value-related characteristics.
 
 The project analyzes variables such as:
 
-Revenue
-Tenure
-Usage
-Customer value
-Churn behavior
-Key Segments
-1,135 high-value customers
-2,303 loyal customers
+- Revenue
+- Tenure
+- Usage
+- Customer value
+- Churn behavior
+
+### Key Segments
+
+- **1,135 high-value customers**
+- **2,303 loyal customers**
 
 Segmentation helps identify groups with different retention characteristics rather than treating every customer identically.
 
-📅 Cohort Analysis
+---
+
+## 📅 Cohort Analysis
 
 Tenure-based cohort analysis is used to compare customer retention patterns across different customer tenure groups.
 
@@ -240,141 +280,169 @@ The analysis provides additional customer lifecycle context and helps examine ho
 
 The Power BI cohort dashboard provides a visual view of customer distribution across tenure groups and retention-related patterns.
 
-💰 Revenue & Retention Analysis
+---
+
+## 💰 Revenue & Retention Analysis
 
 The platform connects churn risk with financial impact.
 
 This allows analysis of:
 
-Revenue associated with at-risk customers
-Customer value distribution
-Potential retention opportunities
-Revenue concentration
-High-value customer risk
+- Revenue associated with at-risk customers
+- Customer value distribution
+- Potential retention opportunities
+- Revenue concentration
+- High-value customer risk
 
 The objective is to move from:
 
-"Who might churn?"
+> **"Who might churn?"**
 
 to:
 
-"Which potentially valuable customers are at risk, and where should retention analysis focus?"
+> **"Which potentially valuable customers are at risk, and where should retention analysis focus?"**
 
-🗄️ SQL Analysis
+---
+
+## 🗄️ SQL Analysis
 
 SQL is used for customer-level analysis, business reporting, churn analysis, segmentation, and revenue analysis.
 
-SQL Techniques
+### SQL Techniques
 
 The project uses analytical SQL techniques including:
 
-SELECT
-WHERE and filtering
-GROUP BY
-Aggregations
-CASE WHEN
-JOINs
-Common Table Expressions (CTEs)
-Window functions
-Customer-level metrics
-Revenue analysis
-Churn analysis
-Segment-level analysis
+- SELECT
+- WHERE and filtering
+- GROUP BY
+- Aggregations
+- CASE WHEN
+- JOINs
+- Common Table Expressions (CTEs)
+- Window functions
+- Customer-level metrics
+- Revenue analysis
+- Churn analysis
+- Segment-level analysis
 
-SQL scripts are available in the sql/ directory.
+SQL scripts are available in the [`sql/`](sql/) directory.
 
-Analytical Questions
+### Analytical Questions
 
 The SQL analysis is designed to answer questions such as:
 
-Which customer segments have the highest churn?
-Which customers contribute the most revenue?
-What is the distribution of customer value?
-Which customer groups have elevated churn risk?
-How does churn vary across contract types?
-How does customer behavior vary across tenure groups?
-🐍 Python Analysis
+- Which customer segments have the highest churn?
+- Which customers contribute the most revenue?
+- What is the distribution of customer value?
+- Which customer groups have elevated churn risk?
+- How does churn vary across contract types?
+- How does customer behavior vary across tenure groups?
+
+---
+
+## 🐍 Python Analysis
 
 Python is used for:
 
-Data cleaning
-Feature preparation
-Exploratory analysis
-Churn modeling
-Customer segmentation
-Model evaluation
-Prediction generation
-Main Libraries
-Pandas
-NumPy
-Scikit-learn
-Matplotlib
-Seaborn
-Joblib
-📊 Power BI Dashboards
+- Data cleaning
+- Feature preparation
+- Exploratory analysis
+- Churn modeling
+- Customer segmentation
+- Model evaluation
+- Prediction generation
 
-The project includes three Power BI dashboards covering different aspects of customer churn, retention, cohort behavior, segmentation, and revenue.
+### Main Libraries
 
-1. Customer Churn Analysis Dashboard
+- Pandas
+- NumPy
+- Scikit-learn
+- Matplotlib
+- Seaborn
+- Joblib
 
-This dashboard focuses on:
+---
 
-Churned customers
-Churn rate
-Revenue loss
-Churn by contract type
-Churn by internet service
-Payment method vs churn
-Customer tenure vs churn
-Monthly charges vs churn
-Interactive filtering
+## 📊 Power BI Dashboards
 
-2. Customer Retention & Cohort Analysis Dashboard
+The project includes **three Power BI dashboards** covering different aspects of customer churn, retention, cohort behavior, segmentation, and revenue.
+
+### 1. Customer Churn Analysis Dashboard
 
 This dashboard focuses on:
 
-Retention rate
-Average tenure
-Loyal customers
-Retained customers
-Customer retention curve
-Customer cohort analysis
-Customer tenure distribution
-Contract-based retention analysis
-Churn by tenure group
+- Churned customers
+- Churn rate
+- Revenue loss
+- Churn by contract type
+- Churn by internet service
+- Payment method vs churn
+- Customer tenure vs churn
+- Monthly charges vs churn
+- Interactive filtering
 
-3. Customer Segmentation & Revenue Analysis Dashboard
+![Customer Churn Analysis Dashboard](assets/screenshots/customer_churn_dashboard.png)
+
+---
+
+### 2. Customer Retention & Cohort Analysis Dashboard
 
 This dashboard focuses on:
 
-Total revenue
-Average revenue
-Average monthly charges
-High-value customers
-Revenue by contract type
-Revenue by internet service
-Customer segmentation
-Customer lifetime value by contract type
-Monthly revenue distribution
+- Retention rate
+- Average tenure
+- Loyal customers
+- Retained customers
+- Customer retention curve
+- Customer cohort analysis
+- Customer tenure distribution
+- Contract-based retention analysis
+- Churn by tenure group
 
-🖥️ Streamlit Application
+![Customer Retention & Cohort Analysis Dashboard](assets/screenshots/customer_retention_cohort_dashboard.png)
+
+---
+
+### 3. Customer Segmentation & Revenue Analysis Dashboard
+
+This dashboard focuses on:
+
+- Total revenue
+- Average revenue
+- Average monthly charges
+- High-value customers
+- Revenue by contract type
+- Revenue by internet service
+- Customer segmentation
+- Customer lifetime value by contract type
+- Monthly revenue distribution
+
+![Customer Segmentation & Revenue Analysis Dashboard](assets/screenshots/customer_segmentation_revenue_dashboard.png)
+
+---
+
+## 🖥️ Streamlit Application
 
 A Streamlit application provides an interactive interface for exploring the customer retention analysis.
 
 The application can be used to present:
 
-Customer analytics
-Churn predictions
-Risk information
-Customer segments
-Revenue analysis
-Retention insights
+- Customer analytics
+- Churn predictions
+- Risk information
+- Customer segments
+- Revenue analysis
+- Retention insights
 
-🔗 Live Application:
+🔗 **Live Application:**
 
 https://customer-retention-intelligence-platform-so9jqrreovwkbhehg65lo.streamlit.app/
 
-🔄 Project Workflow
+---
+
+## 🔄 Project Workflow
+
+```text
 Customer Dataset
        │
        ▼
@@ -408,22 +476,31 @@ Feature Preparation
         ▼             ▼
    Power BI       Streamlit
     Dashboards     Application
-📦 Dataset
+```
 
-The project uses a customer churn dataset containing 7,032 customer records.
+---
 
-Dataset Characteristics
+## 📦 Dataset
+
+The project uses a customer churn dataset containing **7,032 customer records**.
+
+### Dataset Characteristics
 
 The dataset contains customer-level information related to:
 
-Customer demographics
-Services
-Contracts
-Payment methods
-Tenure
-Revenue-related information
-Churn status
-📁 Project Structure
+- Customer demographics
+- Services
+- Contracts
+- Payment methods
+- Tenure
+- Revenue-related information
+- Churn status
+
+---
+
+## 📁 Project Structure
+
+```text
 customer-retention-intelligence-platform/
 │
 ├── assets/
@@ -463,137 +540,201 @@ customer-retention-intelligence-platform/
 ├── requirements.txt
 ├── README.md
 └── .gitignore
-Important Files
+```
 
-src/analytics/churn_model.py
+### Important Files
+
+**`src/analytics/churn_model.py`**  
 Trains and evaluates the Random Forest churn model.
 
-sql/executed_sql.sql
+**`sql/executed_sql.sql`**  
 Contains SQL-based customer, churn, revenue, and segmentation analysis.
 
-main.py
+**`main.py`**  
 Main application or pipeline entry point.
 
-generate_report.py
+**`generate_report.py`**  
 Generates project analysis/report outputs.
 
-tests/test_mysql.py
+**`tests/test_mysql.py`**  
 Contains database-related testing functionality.
 
-requirements.txt
+**`requirements.txt`**  
 Contains the Python dependencies required to run the project.
 
-🛠️ Technologies Used
-Programming
-Python
-Data Analysis
-Pandas
-NumPy
-Machine Learning
-Scikit-learn
-Random Forest
-Database / SQL
-MySQL
-SQL
-Visualization
-Power BI
-Matplotlib
-Seaborn
-Application
-Streamlit
-Model Persistence
-Joblib
-Version Control
-Git
-GitHub
-⚙️ Installation
-1. Clone the Repository
+---
+
+## 🛠️ Technologies Used
+
+### Programming
+
+- Python
+
+### Data Analysis
+
+- Pandas
+- NumPy
+
+### Machine Learning
+
+- Scikit-learn
+- Random Forest
+
+### Database / SQL
+
+- MySQL
+- SQL
+
+### Visualization
+
+- Power BI
+- Matplotlib
+- Seaborn
+
+### Application
+
+- Streamlit
+
+### Model Persistence
+
+- Joblib
+
+### Version Control
+
+- Git
+- GitHub
+
+---
+
+## ⚙️ Installation
+
+### 1. Clone the Repository
+
+```bash
 git clone https://github.com/jagadeeswari-19/customer-retention-intelligence-platform.git
 cd customer-retention-intelligence-platform
-2. Create a Virtual Environment
-Windows
+```
+
+### 2. Create a Virtual Environment
+
+#### Windows
+
+```bash
 python -m venv venv
+```
 
 Activate:
 
+```bash
 venv\Scripts\activate
-macOS/Linux
+```
+
+#### macOS/Linux
+
+```bash
 python3 -m venv venv
+```
 
 Activate:
 
+```bash
 source venv/bin/activate
-3. Install Dependencies
+```
+
+### 3. Install Dependencies
+
+```bash
 pip install -r requirements.txt
-🧠 Train the Churn Model
+```
+
+---
+
+## 🧠 Train the Churn Model
 
 From the project root, run:
 
+```bash
 python -m src.analytics.churn_model
+```
 
 Running the module from the project root ensures imports such as:
 
+```python
 from src.config import CLEAN_DATA_PATH
+```
 
 resolve correctly.
 
-Training Pipeline
+### Training Pipeline
 
 The training pipeline:
 
-Loads the cleaned customer dataset
-Separates features and churn target
-Creates the train/test split
-Trains the Random Forest model
-Generates predictions
-Calculates ROC-AUC
-Calculates accuracy
-Calculates recall
-Calculates precision
-Saves the trained model
-Saves customer-level predictions
-Current Model Output
+1. Loads the cleaned customer dataset
+2. Separates features and churn target
+3. Creates the train/test split
+4. Trains the Random Forest model
+5. Generates predictions
+6. Calculates ROC-AUC
+7. Calculates accuracy
+8. Calculates recall
+9. Calculates precision
+10. Saves the trained model
+11. Saves customer-level predictions
+
+### Current Model Output
+
+```text
 ROC-AUC  : 0.813
 Accuracy : 0.792
 Recall   : 0.489
 Precision: 0.644
-📤 Model Output
+```
+
+---
+
+## 📤 Model Output
 
 The training pipeline saves customer-level prediction results.
 
 The prediction dataset can be used to compare:
 
-Actual Churn
-Predicted Churn
-Churn Probability
+- Actual Churn
+- Predicted Churn
+- Churn Probability
 
 The churn probability can also be used as an input for customer risk analysis and retention-oriented segmentation.
 
-💼 Business Applications
-Customer Risk Identification
+---
+
+## 💼 Business Applications
+
+### Customer Risk Identification
 
 Identify customers with elevated predicted churn risk.
 
-High-Value Customer Monitoring
+### High-Value Customer Monitoring
 
 Combine churn risk with customer value to identify customers requiring closer analysis.
 
-Retention Planning
+### Retention Planning
 
 Use customer-level risk information as an analytical input for retention planning.
 
-Revenue Risk Analysis
+### Revenue Risk Analysis
 
 Analyze revenue associated with customers identified as being at risk.
 
-Customer Segmentation
+### Customer Segmentation
 
 Analyze differences between customer groups to support targeted retention analysis.
 
-🎯 Key Project Outcomes
+---
+
+## 🎯 Key Project Outcomes
 
 The project demonstrates an end-to-end workflow connecting:
 
+```text
 SQL
  +
 Python
@@ -609,60 +750,74 @@ Revenue Analysis
 Power BI
  +
 Streamlit
+```
 
 The main objective is not only to build a churn classifier, but to connect prediction outputs with customer value and retention-oriented business analysis.
 
-🚀 Future Improvements
+---
+
+## 🚀 Future Improvements
 
 Potential extensions include:
 
-Hyperparameter tuning
-Cross-validation
-Probability calibration
-Classification threshold optimization
-Optimization based on retention costs
-Model comparison with Logistic Regression and XGBoost
-Customer lifetime value modeling
-Retention recommendation engine
-Automated model monitoring
-Model drift detection
-Automated dashboard refresh
-API deployment
-Cloud deployment
-🔐 Security & Configuration
+- Hyperparameter tuning
+- Cross-validation
+- Probability calibration
+- Classification threshold optimization
+- Optimization based on retention costs
+- Model comparison with Logistic Regression and XGBoost
+- Customer lifetime value modeling
+- Retention recommendation engine
+- Automated model monitoring
+- Model drift detection
+- Automated dashboard refresh
+- API deployment
+- Cloud deployment
 
-Database credentials and other secrets should not be hard-coded in the source code.
+---
+
+## 🔐 Security & Configuration
+
+Database credentials and other secrets should **not** be hard-coded in the source code.
 
 Use environment variables for sensitive configuration such as:
 
+```text
 MYSQL_HOST
 MYSQL_USER
 MYSQL_PASSWORD
 MYSQL_DATABASE
+```
 
-A local .env file can be used during development and should be excluded from Git using .gitignore.
+A local `.env` file can be used during development and should be excluded from Git using `.gitignore`.
 
 Never commit passwords, API keys, tokens, or other credentials to the repository.
 
-👤 Author
+---
 
-Jagadeeswari S.
+## 👤 Author
+
+**Jagadeeswari S.**
 
 B.Tech — Artificial Intelligence & Data Science
 
-Areas of Interest
-Data Analytics
-Business Intelligence
-Machine Learning
-Customer Analytics
-Predictive Analytics
-SQL
-Python
-Power BI
-⚠️ Disclaimer
+### Areas of Interest
+
+- Data Analytics
+- Business Intelligence
+- Machine Learning
+- Customer Analytics
+- Predictive Analytics
+- SQL
+- Python
+- Power BI
+
+---
+
+## ⚠️ Disclaimer
 
 This project is intended for educational and portfolio purposes.
 
 Model performance depends on the dataset, feature preparation, train/test split, model configuration, and classification threshold.
 
-The current model achieves a ROC-AUC of 0.813, while its recall of 0.489 indicates that there is room to improve the identification of actual churners. Future threshold optimization and model tuning can be evaluated based on the business cost of missed churners versus unnecessary retention interventions.
+The current model achieves a **ROC-AUC of 0.813**, while its **recall of 0.489** indicates that there is room to improve the identification of actual churners. Future threshold optimization and model tuning can be evaluated based on the business cost of missed churners versus unnecessary retention interventions.
